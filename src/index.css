@@ -1,0 +1,156 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+
+@import "tailwindcss";
+
+:root {
+  font-family: "Satoshi", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  height: 100%;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background: linear-gradient(
+    180deg,
+    rgba(23, 29, 45, 0.5) 0%,
+    rgba(4, 11, 29, 0.5) 100%
+  );
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, transparent 1px);
+  background-size: 60px 60px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.gradient-circle {
+  position: absolute;
+  width: 60%;
+  height: 542px;
+  left: 50%;
+  top: -300px;
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: -1;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(0, 89, 255, 0.37) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  background-size: 60px 60px, 60px 60px, 100% 100%;
+}
+.choose-us-circle {
+  position: absolute;
+  width: 70%;
+  height: 800px;
+  left: 50%;
+  top: 80px;
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: -1;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(0, 89, 255, 0.97) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  filter: blur(20px); /* Add blur effect to the circle */
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.particles {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 15px 15px;
+}
+
+.sphere {
+  box-shadow: 0 0 50px rgba(0, 102, 255, 0.3),
+    inset 0 0 50px rgba(0, 102, 255, 0.3);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+@keyframes move-horizontal {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes move-vertical {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-move-horizontal {
+  animation: move-horizontal 2s linear infinite alternate;
+}
+
+.animate-move-vertical {
+  animation: move-vertical 2s linear infinite alternate;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Adjust the width of the blur effect */
+  z-index: 2;
+  pointer-events: none; /* Ensure clicks pass through to the carousel */
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #121212 0%,
+    /* Start with a more faded black */ rgba(0, 0, 0, 0.16) 50%,
+    /* Midway point with a darker black */ rgba(0, 0, 0, 0) 100%
+  ); /* Black gradient */
+}
+
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #121212 0%,
+    /* Start with a more faded black */ rgba(0, 0, 0, 0.16) 50%,
+    /* Midway point with a darker black */ rgba(0, 0, 0, 0) 100%
+  ); /* Black gradient */
+}
