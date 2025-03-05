@@ -3,8 +3,20 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="text-white py-12 w-full px-6 md:w-[1000px]">
-      <div className="container mx-auto px-4">
+    <footer
+      className="text-white py-12 w-full px-6 relative"
+      style={{
+        background:
+          "radial-gradient(43.69% 75.71% at 50% 44.52%, #10141A 0%, #0C121C 50%, #0A1017 100%)",
+        borderTop: "2.4px solid",
+        borderImageSource:
+          "linear-gradient(90deg, #192235 0%, #0059FF 30%, #6FADFF 50%, #0059FF 70%, #192235 100%)",
+        borderImageSlice: 1,
+      }}
+    >
+      <div className="footer-circle"></div>
+
+      <div className="container mx-auto px-4 md:w-[1000px]">
         {/* Flex Container */}
         <div className="flex flex-col md:flex-row justify-between gap-8">
           {/* Company Info - Left Side */}
@@ -105,13 +117,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Copyright Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Aminify. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>

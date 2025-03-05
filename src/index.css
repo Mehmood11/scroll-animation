@@ -41,6 +41,44 @@
     );
   background-size: 60px 60px, 60px 60px, 100% 100%;
 }
+.footer-circle {
+  position: absolute;
+  width: 70%;
+  height: 342px;
+  left: 50%;
+  top: -200px;
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: -1;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(0, 89, 255, 0.37) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  background-size: 60px 60px, 60px 60px, 100% 100%;
+}
+.plan-circle {
+  position: absolute;
+  width: 40%;
+  height: 176px;
+  left: 50%;
+  top: -33px;
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: -1;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(0, 89, 255, 0.37) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  background-size: 60px 60px, 60px 60px, 100% 100%;
+}
 .choose-us-circle {
   position: absolute;
   width: 70%;
@@ -58,6 +96,23 @@
       rgba(0, 89, 255, 0.97) 0%,
       rgba(1, 1, 1, 0) 100%
     );
+  filter: blur(20px); /* Add blur effect to the circle */
+}
+.faq-circle {
+  position: absolute;
+  width: 60%;
+  height: 600px;
+  left: 50%;
+  top: -35px;
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: -1;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    67.82% 67.82% at 50% 50%,
+    #a793ff30 0%,
+    rgba(167, 147, 255, 0) 100%
+  );
   filter: blur(20px); /* Add blur effect to the circle */
 }
 

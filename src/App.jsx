@@ -1,6 +1,9 @@
 import AnimatedSphere from "./components/AnimatedSphere";
 import Carousel from "./components/Carousel";
+import ExplorePlans from "./components/explore-plane";
+import FAQSection from "./components/faq-section";
 import Footer from "./components/footer";
+import GetStarted from "./components/get-started";
 import Header from "./components/header";
 import Hero from "./components/Hero";
 import WhyChooseUs from "./components/why-choose-us";
@@ -13,6 +16,9 @@ function App() {
       <AnimatedSphere />
       <Carousel />
       <WhyChooseUs />
+      <ExplorePlans />
+      <FAQSection />
+      <GetStarted />
       <Footer />
     </div>
   );

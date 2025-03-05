@@ -18,7 +18,13 @@ const Hero = () => {
           <button className="rounded-xl shadow-[inset_0px_0px_8px_0px_#0099FF] text-white px-6 py-3 transition-colors">
             Try it now
           </button>
-          <button className="relative rounded-xl text-white px-6 py-3 transition-colors before:absolute before:inset-0 before:rounded-xl before:p-[0.8px] before:bg-gradient-to-b before:from-white/32 before:via-white/12 before:to-white/12 before:-z-10 hover:before:bg-white/10">
+          <button
+            className="relative rounded-xl text-white px-6 py-3 transition-colors"
+            style={{
+              background:
+                "linear-gradient(249.49deg, #1F1F1F 8.6%, #191919 19.56%, #0F0F0F 44.25%)",
+            }}
+          >
             Book your demo
           </button>
         </div>
