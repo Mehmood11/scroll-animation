@@ -6,6 +6,7 @@ import Footer from "./components/footer";
 import GetStarted from "./components/get-started";
 import Header from "./components/header";
 import Hero from "./components/Hero";
+import TestimonialsCarousel from "./components/testimonial";
 import WhyChooseUs from "./components/why-choose-us";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <WhyChooseUs />
       <ExplorePlans />
       <FAQSection />
+      <TestimonialsCarousel />
       <GetStarted />
       <Footer />
     </div>

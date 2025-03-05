@@ -41,6 +41,25 @@
     );
   background-size: 60px 60px, 60px 60px, 100% 100%;
 }
+.testimonial-circle {
+  position: absolute;
+  width: 400px;
+  height: 202px;
+  left: 50%;
+  top: 180px;
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: -1;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(111, 0, 255, 0.451) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  background-size: 60px 60px, 60px 60px, 100% 100%;
+}
 .footer-circle {
   position: absolute;
   width: 70%;
@@ -62,7 +81,7 @@
 }
 .plan-circle {
   position: absolute;
-  width: 40%;
+  width: 380px;
   height: 176px;
   left: 50%;
   top: -33px;
@@ -74,7 +93,7 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     radial-gradient(
       46.67% 52.09% at 50% 50%,
-      rgba(0, 89, 255, 0.37) 0%,
+      rgba(111, 0, 255, 0.451) 0%,
       rgba(1, 1, 1, 0) 100%
     );
   background-size: 60px 60px, 60px 60px, 100% 100%;
@@ -93,7 +112,7 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     radial-gradient(
       46.67% 52.09% at 50% 50%,
-      rgba(0, 89, 255, 0.97) 0%,
+      rgba(111, 0, 255, 0.551) 0%,
       rgba(1, 1, 1, 0) 100%
     );
   filter: blur(20px); /* Add blur effect to the circle */
@@ -190,12 +209,32 @@
   pointer-events: none; /* Ensure clicks pass through to the carousel */
 }
 
+.testimonial-container::before,
+.testimonial-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 400px; /* Adjust the width of the blur effect */
+  z-index: 2;
+  pointer-events: none; /* Ensure clicks pass through to the carousel */
+}
+
 .carousel-container::before {
   left: 0;
   background: linear-gradient(
     to right,
     #121212 0%,
     /* Start with a more faded black */ rgba(0, 0, 0, 0.16) 50%,
+    /* Midway point with a darker black */ rgba(0, 0, 0, 0) 100%
+  ); /* Black gradient */
+}
+.testimonial-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #121212 0%,
+    /* Start with a more faded black */ rgba(0, 0, 0, 0.46) 50%,
     /* Midway point with a darker black */ rgba(0, 0, 0, 0) 100%
   ); /* Black gradient */
 }
@@ -208,4 +247,53 @@
     /* Start with a more faded black */ rgba(0, 0, 0, 0.16) 50%,
     /* Midway point with a darker black */ rgba(0, 0, 0, 0) 100%
   ); /* Black gradient */
+}
+.testimonial-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #121212 0%,
+    /* Start with a more faded black */ rgba(0, 0, 0, 0.46) 50%,
+    /* Midway point with a darker black */ rgba(0, 0, 0, 0) 100%
+  ); /* Black gradient */
+}
+
+@media (max-width: 768px) {
+  .testimonial-container::after {
+    background: linear-gradient(
+      to left,
+      #121212 0%,
+      /* Start with a more faded black */ rgba(0, 0, 0, 0.26) 50%,
+      /* Midway point with a darker black */ rgba(0, 0, 0, 0) 100%
+    ); /* Black gradient */
+  }
+  .testimonial-container::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      #121212 0%,
+      /* Start with a more faded black */ rgba(0, 0, 0, 0.26) 50%,
+      /* Midway point with a darker black */ rgba(0, 0, 0, 0) 100%
+    ); /* Black gradient */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-container::after {
+    background: linear-gradient(
+      to left,
+      #121212 0%,
+      /* Start with a more faded black */ transparent 50%,
+      /* Midway point with a darker black */ transparent 100%
+    ); /* Black gradient */
+  }
+  .testimonial-container::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      #121212 0%,
+      /* Start with a more faded black */ transparent 50%,
+      /* Midway point with a darker black */ transparent 100%
+    ); /* Black gradient */
+  }
 }
