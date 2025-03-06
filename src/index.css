@@ -24,10 +24,10 @@
 }
 .gradient-circle {
   position: absolute;
-  width: 60%;
-  height: 542px;
+  width: 570px;
+  height: 532px;
   left: 50%;
-  top: -300px;
+  top: -320px;
   border-radius: 50%;
   opacity: 0.9;
   z-index: -1;
@@ -39,7 +39,7 @@
       rgba(0, 89, 255, 0.37) 0%,
       rgba(1, 1, 1, 0) 100%
     );
-  background-size: 60px 60px, 60px 60px, 100% 100%;
+  /* background-size: 60px 60px, 60px 60px, 100% 100%; */
 }
 .testimonial-circle {
   position: absolute;
@@ -78,6 +78,44 @@
       rgba(1, 1, 1, 0) 100%
     );
   background-size: 60px 60px, 60px 60px, 100% 100%;
+}
+.sphere-circle {
+  position: absolute;
+  width: 580px;
+  height: 276px;
+  left: 50%;
+  top: -120px;
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: -1;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(0, 89, 255, 0.37) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  background-size: 60px 60px, 60px 60px, 100% 100%;
+}
+.sphere-circle2 {
+  position: absolute;
+  width: 580px;
+  height: 276px;
+  left: 50%;
+  bottom: -120px;
+  border-radius: 50%;
+  opacity: 0.9;
+  z-index: -1;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(111, 0, 255, 0.451) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  /* background-size: 60px 60px, 60px 60px, 100% 100%; */
 }
 .plan-circle {
   position: absolute;
@@ -133,6 +171,119 @@
     rgba(167, 147, 255, 0) 100%
   );
   filter: blur(20px); /* Add blur effect to the circle */
+}
+.interface-circle-1 {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  left: 100px;
+  bottom: -100px;
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 0;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    67.82% 67.82% at 50% 50%,
+    #006aff47 0%,
+    rgba(167, 147, 255, 0) 100%
+  );
+  filter: blur(20px); /* Add blur effect to the circle */
+}
+.interface-circle-2 {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -200px;
+  top: 0px;
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 0;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    67.82% 67.82% at 50% 50%,
+    #25204d 10%,
+    rgba(167, 147, 255, 0) 100%
+  );
+  filter: blur(20px); /* Add blur effect to the circle */
+}
+.collab-circle-1 {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: 40%;
+  top: -100px;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: 0;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    67.82% 67.82% at 50% 50%,
+    #25204d 10%,
+    rgba(167, 147, 255, 0) 100%
+  );
+  filter: blur(20px); /* Add blur effect to the circle */
+}
+.collab-circle-2 {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: 50%;
+  bottom: -190px;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 0;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    67.82% 67.82% at 50% 50%,
+    #4d3aac 40%,
+    rgba(167, 147, 255, 0) 100%
+  );
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(111, 0, 255, 0.451) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  background-size: 60px 60px, 60px 60px, 100% 100%;
+}
+.cloud-circle-1 {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 70%;
+  bottom: 90px;
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: 0;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(111, 0, 255, 0.451) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  background-size: 60px 60px, 0px 60px, 100% 100%;
+}
+.cloud-circle-2 {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 20%;
+  top: 0px;
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: 0;
+  transform: translateX(-50%);
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(
+      46.67% 52.09% at 50% 50%,
+      rgba(111, 0, 255, 0.451) 0%,
+      rgba(1, 1, 1, 0) 100%
+    );
+  background-size: 60px 60px, 0px 60px, 100% 100%;
 }
 
 @keyframes spin-slow {

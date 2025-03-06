@@ -49,7 +49,7 @@ const Carousel = () => {
   }, [instanceRef]);
 
   return (
-    <div className="w-2/3 py-6 overflow-hidden relative">
+    <div className="w-2/3 py-6 overflow-hidden relative mt-30">
       <h2 className="text-center text-[20px] font-[500] mb-4 text-[background: #BEBEBE;]">
         Our Clients
       </h2>

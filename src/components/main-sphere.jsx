@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import icon1 from "../assets/icon-1.png";
 import icon2 from "../assets/icon-2.png";
 import icon3 from "../assets/icon-3.png";
+import AnimatedSphere from "./animated-sphere";
 
-const AnimatedSphere = () => {
+const MainSphere = () => {
   const [activeTab, setActiveTab] = useState("Layers");
   const [activeRightTab, setActiveRightTab] = useState("Design");
   const [expandedSection, setExpandedSection] = useState("Fill");
@@ -13,8 +14,20 @@ const AnimatedSphere = () => {
     setExpandedSection((prev) => (prev === item ? "" : item));
   };
   return (
-    <div className="w-full flex items-center justify-center">
-      <div className="left-div w-[280px] bg-[#1C1C1E]/90 rounded-md border-white/[0.08] animate-border-glow">
+    <div className="w-full flex justify-center items-stretch gap-4 relative">
+      <div className="sphere-circle"></div>
+      <div className="sphere-circle2"></div>
+
+      <div
+        className="left-div w-[280px] bg-[#090b10]/90 rounded-2xl overflow-hidden relative"
+        style={{
+          border: "1px solid",
+          borderImage:
+            "linear-gradient(166.07deg, #192235 27.69%, #0059FF 43.28%, #6FADFF 55.1%, #0059FF 66.44%, #192235 81.56%) 1",
+          maskImage: "linear-gradient(white, white)", // Ensure border respects border-radius
+          WebkitMaskImage: "linear-gradient(white, white)",
+        }}
+      >
         {/* Tabs */}
         <div className="flex items-center px-4 py-3 border-b border-white/[0.08]">
           <button
@@ -117,7 +130,17 @@ const AnimatedSphere = () => {
           <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
         </div>
       </div> */}
-      <div className="right-div w-[280px] bg-[#1C1C1E]/90 rounded-md border-white/[0.08] animate-border-glow">
+      <AnimatedSphere />
+      <div
+        className="right-div w-[280px] bg-[#090b10]/90 rounded-2xl overflow-hidden relative"
+        style={{
+          border: "1px solid",
+          borderImage:
+            "linear-gradient(166.07deg, #192235 27.69%, #0059FF 43.28%, #6FADFF 55.1%, #0059FF 66.44%, #192235 81.56%) 1",
+          maskImage: "linear-gradient(white, white)", // Ensure border respects border-radius
+          WebkitMaskImage: "linear-gradient(white, white)",
+        }}
+      >
         {/* Design/Animate Tabs */}
         <div className="p-4">
           <div className="flex gap-2 mb-4">
@@ -227,7 +250,7 @@ const AnimatedSphere = () => {
             </div>
           </div>
 
-          <hr class="my-7 h-[1px] border-t-0 bg-neutral-100 dark:bg-white/10" />
+          <hr className="my-7 h-[1px] border-t-0 bg-neutral-100 dark:bg-white/10" />
 
           {/* Opacity Section */}
           <div className="">
@@ -320,4 +343,4 @@ const AnimatedSphere = () => {
   );
 };
 
-export default AnimatedSphere;
+export default MainSphere;
