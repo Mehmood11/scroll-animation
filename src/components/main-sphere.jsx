@@ -14,12 +14,16 @@ const MainSphere = () => {
     setExpandedSection((prev) => (prev === item ? "" : item));
   };
   return (
-    <div className="w-full flex justify-center items-stretch gap-4 relative">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="w-[80%] flex justify-center items-stretch flex-col lg:flex-row gap-4 relative"
+    >
       <div className="sphere-circle"></div>
       <div className="sphere-circle2"></div>
 
       <div
-        className="left-div w-[280px] bg-[#090b10]/90 rounded-2xl overflow-hidden relative"
+        className="left-div order-3 lg:order-0 w-[100%] lg:w-[480px] bg-[#090b10]/90 rounded-2xl overflow-hidden relative"
         style={{
           border: "1px solid",
           borderImage:
@@ -120,19 +124,9 @@ const MainSphere = () => {
           </div>
         </div>
       </div>
-      {/* <div className="sphere-container w-[300px] h-[300px] relative">
-        <div className="sphere w-full h-full rounded-full animate-spin-slow relative">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0066FF] to-[#4D9FFF] opacity-80"></div>
-
-          <div className="absolute inset-0 rounded-full overflow-hidden">
-            <div className="particles absolute inset-0 opacity-50"></div>
-          </div>
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
-        </div>
-      </div> */}
       <AnimatedSphere />
       <div
-        className="right-div w-[280px] bg-[#090b10]/90 rounded-2xl overflow-hidden relative"
+        className="right-div order-3 lg:order-0 w-[100%] lg:w-[480px] bg-[#090b10]/90 rounded-2xl overflow-hidden relative"
         style={{
           border: "1px solid",
           borderImage:
@@ -199,7 +193,7 @@ const MainSphere = () => {
           <div className="mb-6">
             <h3 className="text-white/80 text-sm mb-2">Layout</h3>
             <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center lg:items-start xl:items-center justify-between xl:flex-row lg:flex-col">
                 <label className="text-white/40 text-xs">X</label>
                 <input
                   type="text"
@@ -207,7 +201,7 @@ const MainSphere = () => {
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center lg:items-start xl:items-center justify-between xl:flex-row lg:flex-col">
                 <label className="text-white/40 text-xs">Y</label>
                 <input
                   type="text"
@@ -215,7 +209,7 @@ const MainSphere = () => {
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center lg:items-start xl:items-center justify-between xl:flex-row lg:flex-col">
                 <label className="text-white/40 text-xs">Width</label>
                 <input
                   type="text"
@@ -223,7 +217,7 @@ const MainSphere = () => {
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center lg:items-start xl:items-center justify-between xl:flex-row lg:flex-col">
                 <label className="text-white/40 text-xs">Height</label>
                 <input
                   type="text"
@@ -231,7 +225,7 @@ const MainSphere = () => {
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center lg:items-start xl:items-center justify-between xl:flex-row lg:flex-col">
                 <label className="text-white/40 text-xs">Angle</label>
                 <input
                   type="text"
@@ -239,7 +233,7 @@ const MainSphere = () => {
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center lg:items-start xl:items-center justify-between xl:flex-row lg:flex-col">
                 <label className="text-white/40 text-xs">Radius</label>
                 <input
                   type="text"
@@ -276,7 +270,7 @@ const MainSphere = () => {
                 className={`shadow-[inset_0px_0px_8px_0px_#36363A]
  p-3 rounded-md transition-transform duration-300 ease-in-out ${
    expandedSection === item ? "rotate-5" : "rotate-0"
- }`}
+ } ${expandedSection === item ? "mb-12 mt-12" : "mb-2"}`}
               >
                 <div
                   className="flex justify-between items-center cursor-pointer"

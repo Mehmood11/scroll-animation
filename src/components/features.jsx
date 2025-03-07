@@ -28,6 +28,8 @@ const Features = () => {
         <div className="flex w-full lg:w-2/3 gap-3 flex-col lg:flex-row">
           <div
             className="easy-to-use w-full lg:w-[60%] h-[330px] rounded-xl p-6 relative overflow-hidden"
+            data-aos="fade-right"
+            data-aos-duration="1000"
             style={{
               background:
                 "linear-gradient(117.8deg, #08152B 16.25%, #10141A 58.12%, #0D1014 100%)",
@@ -68,6 +70,8 @@ const Features = () => {
           </div>
           <div
             className="collaboration w-full lg:w-[40%] h-[330px] rounded-xl p-6 relative overflow-hidden"
+            data-aos="fade-left"
+            data-aos-duration="1000"
             style={{
               background:
                 "linear-gradient(117.8deg, #08152B 16.25%, #10141A 58.12%, #0D1014 100%)",
@@ -110,6 +114,8 @@ const Features = () => {
         <div className="flex w-full lg:w-2/3 gap-3 mt-3 flex-col lg:flex-row">
           <div
             className="easy-to-use  w-full lg:w-[50%] h-[500px] rounded-xl rel flex flex-col items-start justify-start p-8 relative overflow-hidden"
+            data-aos="fade-right"
+            data-aos-duration="1000"
             style={{
               background:
                 "linear-gradient(117.8deg, #08152B 16.25%, #10141A 58.12%, #0D1014 100%)",
@@ -178,13 +184,15 @@ const Features = () => {
           </div>
           <div
             className="easy-to-use  w-full lg:w-[50%] h-[500px] rounded-xl rel flex flex-col items-start justify-start p-8 relative overflow-hidden"
+            data-aos="fade-left"
+            data-aos-duration="1000"
             style={{
               background:
                 "linear-gradient(117.8deg, #08152B 16.25%, #10141A 58.12%, #0D1014 100%)",
             }}
           >
             <div className="relative flex items-center justify-center h-74 rounded-full self-center mb-6">
-              <img src={integration} alt='integration' className="w-full"/>
+              <img src={integration} alt="integration" className="w-full" />
             </div>
 
             <h1 className="text-white text-md font-bold relative z-10">

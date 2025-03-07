@@ -22,6 +22,8 @@ const ExplorePlans = () => {
           {/* Starter Plan */}
           <div
             className="p-8 rounded-lg shadow-lg relative"
+            data-aos="fade-right"
+            data-aos-duration="1000"
             style={{
               background:
                 "radial-gradient(43.69% 75.71% at 50% 44.52%, #10141A 0%, #0C121C 50%, #0A1017 100%)",
@@ -72,6 +74,8 @@ const ExplorePlans = () => {
           {/* Professional Plan */}
           <div
             className="p-8 rounded-lg shadow-lg"
+            data-aos="zoom-out"
+            data-aos-duration="1000"
             style={{
               background:
                 "linear-gradient(180deg, #1B1430 0%, #0F0D16 50%, #1B1430 100%)",
@@ -136,6 +140,8 @@ const ExplorePlans = () => {
           {/* Enterprise Plan */}
           <div
             className="p-8 rounded-lg shadow-lg"
+            data-aos="fade-left"
+            data-aos-duration="1000"
             style={{
               background:
                 "radial-gradient(43.69% 75.71% at 50% 44.52%, #10141A 0%, #0C121C 50%, #0A1017 100%)",

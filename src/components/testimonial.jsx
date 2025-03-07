@@ -9,30 +9,30 @@ const testimonials = [
     name: "John M.",
     role: "Operations Lead",
     quote:
-      "This tool has completely transformed the way we work! It’s intuitive, fast, and so easy to integrate with our current processes. Highly recommended!",
+      "This tool has completely transformed the way we work! It's intuitive, fast, and so easy to integrate with our current processes. Highly recommended!",
   },
   {
     name: "Mike T.",
     role: "Product Designer",
     quote:
-      "I’ve tried a lot of similar tools, but this one stands out. The features are top-notch, and the customer support is fantastic.",
+      "I've tried a lot of similar tools, but this one stands out. The features are top-notch, and the customer support is fantastic.",
   },
   {
     name: "David R.",
     role: "Product Manager",
-    quote: "I’ve tried a lot of similar features are top-notch, fantastic.",
+    quote: "I've tried a lot of similar features are top-notch, fantastic.",
   },
   {
     name: "Kevin B.",
     role: "Proclaimer",
     quote:
-      "I can’t imagine going back to the old way of doing things. This product has made everything smoother and more efficient. It’s a game changer!",
+      "I can't imagine going back to the old way of doing things. This product has made everything smoother and more efficient. It's a game changer!",
   },
   {
     name: "Robert S.",
     role: "Project Manager",
     quote:
-      "Incredible tool! I was able to automate so many tasks that used to take hours. It’s a real time-saver!",
+      "Incredible tool! I was able to automate so many tasks that used to take hours. It's a real time-saver!",
   },
 ];
 
@@ -108,71 +108,77 @@ const TestimonialsCarousel = () => {
   });
 
   return (
-    <div className="text-white py-20 px-6 relative">
+    <div className="testimonials-carousel">
       <div className="text-white py-20 px-6 relative">
-        <div className="absolute top-[340px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            className="w-204 h-204"
+        <div className="text-white py-20 px-6 relative">
+          <div
+            className="absolute top-[340px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-1"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
           >
-            <defs>
-              {/* Gradient for the heart fill */}
-              <linearGradient
-                id="heartGradient"
-                x1="0%"
-                y1="0%"
-                x2="0%"
-                y2="100%"
-              >
-                <stop
-                  offset="0%"
-                  style={{ stopColor: "#0F0C18", stopOpacity: 1 }}
-                />
-                <stop
-                  offset="50%"
-                  style={{ stopColor: "#0D0A17", stopOpacity: 1 }}
-                />
-                <stop
-                  offset="100%"
-                  style={{ stopColor: "#110828", stopOpacity: 1 }}
-                />
-              </linearGradient>
-              {/* Gradient for the heart border */}
-              <linearGradient
-                id="heartBorderGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop
-                  offset="0%"
-                  style={{ stopColor: "#3F325F", stopOpacity: 1 }}
-                />
-                <stop
-                  offset="100%"
-                  style={{ stopColor: "#110828", stopOpacity: 1 }}
-                />
-              </linearGradient>
-            </defs>
-            {/* Heart with gradient fill and border */}
-            <path
-              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-              fill="url(#heartGradient)"
-              stroke="url(#heartBorderGradient)"
-              strokeWidth=".04" // Adjust the border thickness
-              opacity="0.6"
-            />
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              className="w-204 h-204"
+            >
+              <defs>
+                {/* Gradient for the heart fill */}
+                <linearGradient
+                  id="heartGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="0%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style={{ stopColor: "#0F0C18", stopOpacity: 1 }}
+                  />
+                  <stop
+                    offset="50%"
+                    style={{ stopColor: "#0D0A17", stopOpacity: 1 }}
+                  />
+                  <stop
+                    offset="100%"
+                    style={{ stopColor: "#110828", stopOpacity: 1 }}
+                  />
+                </linearGradient>
+                {/* Gradient for the heart border */}
+                <linearGradient
+                  id="heartBorderGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style={{ stopColor: "#3F325F", stopOpacity: 1 }}
+                  />
+                  <stop
+                    offset="100%"
+                    style={{ stopColor: "#110828", stopOpacity: 1 }}
+                  />
+                </linearGradient>
+              </defs>
+              {/* Heart with gradient fill and border */}
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                fill="url(#heartGradient)"
+                stroke="url(#heartBorderGradient)"
+                strokeWidth=".04" // Adjust the border thickness
+                opacity="0.6"
+              />
+            </svg>
+          </div>
         </div>
+        <div className="testimonial-circle"></div>
+        {/* Heading */}
+        <h2 className="text-3xl font-bold text-center mb-4 text-white">
+          Our Customers
+        </h2>
+        <p className="text-white text-center mb-12">What people say about us</p>
       </div>
-      <div className="testimonial-circle"></div>
-      {/* Heading */}
-      <h2 className="text-3xl font-bold text-center mb-4 text-white">
-        Our Customers
-      </h2>
-      <p className="text-white text-center mb-12">What people say about us</p>
 
       <div
         className="w-[100vw] relative testimonial-container"

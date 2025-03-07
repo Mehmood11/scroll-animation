@@ -8,7 +8,11 @@ import upload from "../assets/Upload.png";
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section
+      className="py-16 relative overflow-hidden"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       {/* Circle Background */}
       <div className="choose-us-circle"></div>
 

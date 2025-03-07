@@ -72,7 +72,7 @@ export default function AnimatedSphere() {
       }
 
       ctx.fillStyle = "#2f87f0";
-      ctx.shadowBlur = 60; // Increased shadow blur for thicker lines
+      ctx.shadowBlur = 20; // Increased shadow blur for thicker lines
       ctx.shadowColor = "#2f87f0";
       ctx.lineWidth = 60; // Increased line width for thicker lines
       ctx.globalCompositeOperation = "lighter";
@@ -159,7 +159,9 @@ export default function AnimatedSphere() {
 
   return (
     <div
-      className="relative rounded-lg overflow-hidden"
+      className="relative rounded-lg overflow-hidden animated-sphere"
+      data-aos="fade-up"
+      data-aos-duration="1000"
       style={{
         border: "1px solid",
         borderImageSource:

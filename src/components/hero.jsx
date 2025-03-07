@@ -1,6 +1,12 @@
+import React from 'react';
+
 const Hero = () => {
   return (
-    <div className="container mx-auto px-6 pt-32 pb-16">
+    <div
+      className="container mx-auto px-6 pt-32 pb-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div className="text-center">
         <h1 className="text-5xl md:text-6xl font-bold mb-8">
           Transform Concepts into,{" "}

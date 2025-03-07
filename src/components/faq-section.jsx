@@ -42,7 +42,11 @@ const FAQSection = () => {
     "radial-gradient(43.69% 75.71% at 50% 44.52%, #10141A 0%, #0C1018 50%, #0A1017 100%)";
 
   return (
-    <div className=" text-white py-20 px-6 relative">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className=" text-white py-20 px-6 relative"
+    >
       <div className="faq-circle"></div>
 
       <div className="max-w-4xl mx-auto">

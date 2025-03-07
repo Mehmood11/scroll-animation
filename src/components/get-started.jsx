@@ -2,7 +2,11 @@ import React from "react";
 
 const GetStarted = () => {
   return (
-    <div className=" text-white py-20 px-6 text-center">
+    <div
+      className="text-white py-20 px-6 text-center"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <h1 className="text-4xl font-bold mb-6">Get Started</h1>
       <p className="text-gray-400 text-lg mb-8">
         Holds no opinions on what's and how's. Build whatever makes sense to
