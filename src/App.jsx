@@ -5,7 +5,7 @@ import Features from "./components/features";
 import Footer from "./components/footer";
 import GetStarted from "./components/get-started";
 import Header from "./components/header";
-import Hero from "./components/hero";
+import Hero from "./components/Hero";
 import TestimonialsCarousel from "./components/testimonial";
 import WhyChooseUs from "./components/why-choose-us";
 import MainSphere from "./components/main-sphere";
