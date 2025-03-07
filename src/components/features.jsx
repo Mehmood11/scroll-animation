@@ -15,14 +15,14 @@ import collab5 from "../assets/collab5.svg";
 const Features = () => {
   return (
     <section className="p-8 w-full">
-      <div class="max-w-4xl mx-auto flex flex-col items-center">
+      <div className="max-w-4xl mx-auto flex flex-col items-center">
         <button className="rounded-3xl shadow-[inset_0px_-2px_16px_0px_#6B49FF99] text-white px-6 py-3 transition-colors">
           Amazing
         </button>
-        <h1 class="text-3xl font-bold text-center mb-4 mt-2">
+        <h1 className="text-3xl font-bold text-center mb-4 mt-2">
           Features and Benefits
         </h1>
-        <p class="text-center md:w-150">
+        <p className="text-center md:w-150">
           Create, customize, and collaborate effortlessly with our intuitive
           platform. From simple edits to complex designs, bring your vision to
           life in no time.

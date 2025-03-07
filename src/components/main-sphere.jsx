@@ -290,7 +290,7 @@ const MainSphere = () => {
                 key={item}
                 className={`shadow-[inset_0px_0px_8px_0px_#36363A] p-3 rounded-md transition-transform duration-300 ease-in-out ${
                   expandedSection === item ? "rotate-5" : "rotate-0"
-                } ${expandedSection === item ? "mb-6 mt-6" : "mb-2"}`}
+                } ${expandedSection === item ? "mb-8 mt-8" : "mb-2"}`}
               >
                 <div
                   className="flex justify-between items-center cursor-pointer"
