@@ -8,7 +8,7 @@ const Hero = () => {
       data-aos-duration="1000"
     >
       <div className="text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8">
           Transform Concepts into,{" "}
           <span className="block">
             <span className="text-[#0099FF]">Dynamic</span> Animations
@@ -20,7 +20,7 @@ const Hero = () => {
           stunning videos and bring your vision to life in just a few clicks!
         </p>
 
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-4 flex-col sm:flex-row">
           <button className="rounded-xl shadow-[inset_0px_0px_8px_0px_#0099FF] text-white px-6 py-3 transition-colors">
             Try it now
           </button>

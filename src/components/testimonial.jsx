@@ -174,9 +174,9 @@ const TestimonialsCarousel = () => {
         </div>
         <div className="testimonial-circle"></div>
         {/* Heading */}
-        <h2 className="text-3xl font-bold text-center mb-4 text-white">
+        <h1 className="text-6xl font-bold text-center mb-4 text-white">
           Our Customers
-        </h2>
+        </h1>
         <p className="text-white text-center mb-12">What people say about us</p>
       </div>
 

@@ -10,9 +10,18 @@ const MainSphere = () => {
   const [activeRightTab, setActiveRightTab] = useState("Design");
   const [expandedSection, setExpandedSection] = useState("Fill");
 
+  // State for input fields
+  const [xValue, setXValue] = useState("197");
+  const [yValue, setYValue] = useState("806");
+  const [widthValue, setWidthValue] = useState("480");
+  const [heightValue, setHeightValue] = useState("320");
+  const [angleValue, setAngleValue] = useState("0°");
+  const [radiusValue, setRadiusValue] = useState("0");
+
   const toggleSection = (item) => {
     setExpandedSection((prev) => (prev === item ? "" : item));
   };
+
   return (
     <div
       data-aos="fade-up"
@@ -22,6 +31,7 @@ const MainSphere = () => {
       <div className="sphere-circle"></div>
       <div className="sphere-circle2"></div>
 
+      {/* Left Div */}
       <div
         className="left-div order-3 lg:order-0 w-[100%] lg:w-[480px] bg-[#090b10]/90 rounded-2xl overflow-hidden relative"
         style={{
@@ -63,7 +73,7 @@ const MainSphere = () => {
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 flex items-center justify-center bg-[#0066FF] rounded-sm">
                 <svg
-                  class="w-2 h-2 text-gray-800 dark:text-white"
+                  className="w-2 h-2 text-gray-800 dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -124,7 +134,11 @@ const MainSphere = () => {
           </div>
         </div>
       </div>
+
+      {/* Animated Sphere */}
       <AnimatedSphere />
+
+      {/* Right Div */}
       <div
         className="right-div order-3 lg:order-0 w-[100%] lg:w-[480px] bg-[#090b10]/90 rounded-2xl overflow-hidden relative"
         style={{
@@ -165,26 +179,26 @@ const MainSphere = () => {
             {/* Horizontal Alignment */}
             <div className="flex p-1 bg-[#0066FF]/20 rounded-lg shadow-[inset_0px_0px_6px_0px_rgba(68,133,254,0.5)]">
               <button className="p-1 text-white/60 border-r-[0.67px] border-[rgba(68,133,254,0.2)]">
-                <img src={icon1} className="h-4" />
+                <img src={icon1} className="h-4" alt="icon1" />
               </button>
               <button className="p-1 text-white/60 border-r-[0.67px] border-[rgba(68,133,254,0.2)]">
-                <img src={icon2} className="h-4" />
+                <img src={icon2} className="h-4" alt="icon2" />
               </button>
               <button className="p-1 text-white/60">
-                <img src={icon3} className="h-4" />
+                <img src={icon3} className="h-4" alt="icon3" />
               </button>
             </div>
 
             {/* Vertical Alignment */}
             <div className="flex p-1 bg-[#0066FF]/20 rounded-lg shadow-[inset_0px_0px_6px_0px_rgba(68,133,254,0.5)]">
-              <button className="p-1 text-white/60  rotate-90 border-t-[0.67px] border-[rgba(68,133,254,0.2)]">
-                <img src={icon1} className="h-4" />
+              <button className="p-1 text-white/60 rotate-90 border-t-[0.67px] border-[rgba(68,133,254,0.2)]">
+                <img src={icon1} className="h-4" alt="icon1" />
               </button>
-              <button className="p-1 text-white/60  rotate-90 border-t-[0.67px] border-[rgba(68,133,254,0.2)]">
-                <img src={icon2} className="h-4" />
+              <button className="p-1 text-white/60 rotate-90 border-t-[0.67px] border-[rgba(68,133,254,0.2)]">
+                <img src={icon2} className="h-4" alt="icon2" />
               </button>
-              <button className="p-1 text-white/60  rotate-90">
-                <img src={icon3} className="h-4" />
+              <button className="p-1 text-white/60 rotate-90">
+                <img src={icon3} className="h-4" alt="icon3" />
               </button>
             </div>
           </div>
@@ -197,7 +211,8 @@ const MainSphere = () => {
                 <label className="text-white/40 text-xs">X</label>
                 <input
                   type="text"
-                  value="197"
+                  value={xValue}
+                  onChange={(e) => setXValue(e.target.value)}
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
@@ -205,7 +220,8 @@ const MainSphere = () => {
                 <label className="text-white/40 text-xs">Y</label>
                 <input
                   type="text"
-                  value="806"
+                  value={yValue}
+                  onChange={(e) => setYValue(e.target.value)}
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
@@ -213,7 +229,8 @@ const MainSphere = () => {
                 <label className="text-white/40 text-xs">Width</label>
                 <input
                   type="text"
-                  value="480"
+                  value={widthValue}
+                  onChange={(e) => setWidthValue(e.target.value)}
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
@@ -221,7 +238,8 @@ const MainSphere = () => {
                 <label className="text-white/40 text-xs">Height</label>
                 <input
                   type="text"
-                  value="320"
+                  value={heightValue}
+                  onChange={(e) => setHeightValue(e.target.value)}
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
@@ -229,7 +247,8 @@ const MainSphere = () => {
                 <label className="text-white/40 text-xs">Angle</label>
                 <input
                   type="text"
-                  value="0°"
+                  value={angleValue}
+                  onChange={(e) => setAngleValue(e.target.value)}
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
@@ -237,7 +256,8 @@ const MainSphere = () => {
                 <label className="text-white/40 text-xs">Radius</label>
                 <input
                   type="text"
-                  value="0"
+                  value={radiusValue}
+                  onChange={(e) => setRadiusValue(e.target.value)}
                   className="w-[45px] bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
                 />
               </div>
@@ -253,12 +273,13 @@ const MainSphere = () => {
               <input
                 type="text"
                 value="100"
+                readOnly
                 className="w-1/3 bg-[#2C2C2E] rounded-lg px-2 py-1 text-white/90 text-sm"
               />
             </div>
           </div>
 
-          <hr class="my-7 h-[1px] border-t-0 bg-neutral-100 dark:bg-white/10" />
+          <hr className="my-7 h-[1px] border-t-0 bg-neutral-100 dark:bg-white/10" />
 
           {/* Collapsible Sections */}
           <div
@@ -267,10 +288,9 @@ const MainSphere = () => {
             {["Fill", "Stroke", "Shadow", "Blur"].map((item) => (
               <div
                 key={item}
-                className={`shadow-[inset_0px_0px_8px_0px_#36363A]
- p-3 rounded-md transition-transform duration-300 ease-in-out ${
-   expandedSection === item ? "rotate-5" : "rotate-0"
- } ${expandedSection === item ? "mb-12 mt-12" : "mb-2"}`}
+                className={`shadow-[inset_0px_0px_8px_0px_#36363A] p-3 rounded-md transition-transform duration-300 ease-in-out ${
+                  expandedSection === item ? "rotate-5" : "rotate-0"
+                } ${expandedSection === item ? "mb-6 mt-6" : "mb-2"}`}
               >
                 <div
                   className="flex justify-between items-center cursor-pointer"

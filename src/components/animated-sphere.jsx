@@ -2,10 +2,11 @@ import { useRef, useEffect, useState } from "react";
 
 export default function AnimatedSphere() {
   const canvasRef = useRef(null);
-  const rulerRef = useRef(null);
+  const secondRulerRef = useRef(null);
   const handleRef = useRef(null);
-  const [speed, setSpeed] = useState(1); // Controls animation speed
+  const [speed, setSpeed] = useState(1);
   const isDragging = useRef(false);
+  const animationFrameRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,7 +27,7 @@ export default function AnimatedSphere() {
     class Point {
       constructor() {
         this.ang = 2 * PI * Math.random();
-        this.dang = ((-0.5 + Math.random()) / 20) * speed; // Adjusted for speed control
+        this.dang = ((-0.5 + Math.random()) / 20) * speed;
         this.r = (2 * L) / 3;
         this.updatePosition();
       }
@@ -41,14 +42,6 @@ export default function AnimatedSphere() {
     }
 
     let ctrls = Array.from({ length: n }, () => new Point());
-
-    function init() {
-      W = window.innerWidth;
-      H = window.innerHeight;
-      canvas.width = W;
-      canvas.height = H;
-      L = Math.min(W, H) / 2;
-    }
 
     function draw() {
       ctx.clearRect(60, 40, W, H);
@@ -72,9 +65,9 @@ export default function AnimatedSphere() {
       }
 
       ctx.fillStyle = "#2f87f0";
-      ctx.shadowBlur = 20; // Increased shadow blur for thicker lines
+      ctx.shadowBlur = 20;
       ctx.shadowColor = "#2f87f0";
-      ctx.lineWidth = 60; // Increased line width for thicker lines
+      ctx.lineWidth = 60;
       ctx.globalCompositeOperation = "lighter";
       ctx.fill();
       ctx.globalCompositeOperation = "source-over";
@@ -82,80 +75,70 @@ export default function AnimatedSphere() {
 
     function animate() {
       draw();
-      requestAnimationFrame(animate);
+      animationFrameRef.current = requestAnimationFrame(animate);
     }
 
     animate();
 
     const handleResize = () => {
-      init();
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvas.width = W;
+      canvas.height = H;
+      L = Math.min(W, H) / 2;
     };
 
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameRef.current);
     };
   }, [speed]);
 
-  // Handle dragging the ruler handle
   useEffect(() => {
     const handle = handleRef.current;
-    const ruler = rulerRef.current;
-
+    const ruler = secondRulerRef.current;
     if (!handle || !ruler) return;
 
-    // Set the initial position of the handle based on the speed
     const rulerWidth = ruler.offsetWidth;
-    const initialPosition = (speed / 5) * rulerWidth; // Speed range: 0 to 5
+    const initialPosition = (speed / 5) * rulerWidth;
     handle.style.transform = `translateX(${initialPosition}px)`;
 
-    const onMouseDown = (e) => {
-      isDragging.current = true;
-
-      // Prevent text selection
-      document.body.style.userSelect = "none";
-    };
+    let animationFrame;
 
     const onMouseMove = (e) => {
       if (!isDragging.current) return;
+      cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(() => {
+        const rulerRect = ruler.getBoundingClientRect();
+        let offsetX = e.clientX - rulerRect.left;
+        let maxX = rulerRect.width - handle.offsetWidth;
 
-      const rulerRect = ruler.getBoundingClientRect();
-      const offsetX = e.clientX - rulerRect.left;
-      const rulerWidth = rulerRect.width;
+        let handlePosition = Math.max(0, Math.min(maxX, offsetX));
+        const newSpeed = ((handlePosition / maxX) * 5).toFixed(2);
 
-      // Clamp the handle position within the ruler bounds
-      const handlePosition = Math.max(0, Math.min(rulerWidth, offsetX));
-      const newSpeed = (handlePosition / rulerWidth) * 5; // Speed range: 0 to 5
-
-      // Update handle position using transform for smooth movement
-      handle.style.transform = `translateX(${handlePosition}px)`;
-
-      // Update speed state in real-time
-      setSpeed(newSpeed);
+        handle.style.transform = `translateX(${handlePosition}px)`;
+        handle.querySelector("div:first-child").textContent = newSpeed; // Update speed display
+        setSpeed(parseFloat(newSpeed));
+      });
     };
 
-    const onMouseUp = (e) => {
-      if (!isDragging.current) return;
+    handle.addEventListener("mousedown", () => {
+      isDragging.current = true;
+      document.body.style.userSelect = "none";
+    });
 
-      isDragging.current = false;
-
-      // Re-enable text selection
-      document.body.style.userSelect = "auto";
-    };
-
-    handle.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("mouseup", () => {
+      isDragging.current = false;
+      document.body.style.userSelect = "auto";
+    });
 
     return () => {
-      handle.removeEventListener("mousedown", onMouseDown);
       window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseup", onMouseUp);
-
-      // Ensure text selection is re-enabled when the component unmounts
       document.body.style.userSelect = "auto";
     };
-  }, [speed]); // Add `speed` as a dependency to update the handle's position when speed changes
+  }, [speed]);
 
   return (
     <div
@@ -167,97 +150,72 @@ export default function AnimatedSphere() {
         borderImageSource:
           "linear-gradient(90deg, #192235 14.76%, #0059FF 41.01%, #6FADFF 51.27%, #0059FF 61.52%, #192235 89.1%)",
         borderImageSlice: 1,
-        maskImage: "linear-gradient(white, white)", // Ensure border respects border-radius
+        maskImage: "linear-gradient(white, white)",
         WebkitMaskImage: "linear-gradient(white, white)",
-        // borderImageWidth: "1",
         background:
           "linear-gradient(133.37deg, #0B194A -14.65%, #10131D 40.27%, #0C0D12 98.81%), radial-gradient(136.23% 140.82% at -3.66% -36.23%, rgba(0, 85, 255, 0.13) 3.61%, rgba(1, 1, 1, 0.2) 65.4%)",
       }}
     >
-      <canvas
-        ref={canvasRef}
-        className="h-[60%] w-[100%]"
-        style={{ display: "block" }}
-      />
-      {/* Ruler */}
-      <div
-        ref={rulerRef}
-        style={{
-          position: "absolute",
-          bottom: 200,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "100%", // Adjusted width to fit within the container
-          height: "30px", // Increased height to accommodate numbers
-          //   backgroundColor: "#333",
-          background: "#171A26",
-          boxShadow: "0px 0px 12px 0px #0095FF66 inset",
-          //   borderRadius: "10px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0 5px",
-        }}
-      >
-        {/* Tick Marks and Numbers */}
-        {[0, 1, 2, 3, 4, 5].map((tick, index) => (
-          <div
-            key={tick}
-            style={{
-              position: "relative",
-              width: "1px",
-              height: "20px",
-              backgroundColor: "#fff",
-            }}
-          >
-            {/* Small Dots */}
-            {[0.25, 0.5, 0.75].map((subTick) => (
-              <div
-                key={subTick}
-                style={{
-                  position: "absolute",
-                  left: `${subTick * 100}%`,
-                  width: "4px",
-                  height: "4px",
-                  backgroundColor: "#fff",
-                  borderRadius: "50%",
-                  transform: "translateX(-50%)",
-                }}
-              />
-            ))}
-            {/* Numbers */}
-            {Number.isInteger(tick) && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "25px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  color: "#fff",
-                  fontSize: "12px",
-                }}
-              >
-                {tick}
-              </div>
-            )}
-          </div>
-        ))}
-        {/* Handle */}
+      <canvas ref={canvasRef} className="h-[60%] w-[100%]" />
+      <div className="relative w-full flex flex-col items-center mt-20">
+        {/* Static Scale */}
+        <div className="relative w-full h-6 bg-[#0B1320] rounded-md flex items-center px-4 border border-[#1E2A38]">
+          {[0, 1, 2, 3, 4, 5].map((num, idx) => (
+            <div
+              key={num}
+              className={`flex ${
+                idx === 5 ? "flex-0" : "flex-1"
+              } items-center justify-between`}
+            >
+              {/* Number */}
+              <span className="text-gray-300 text-xs">{num}s</span>
+
+              {/* Dots (Evenly Distributed Between Numbers) */}
+              {idx < 5 && (
+                <div className="flex flex-1 justify-evenly">
+                  {[...Array(5)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-1 h-1 bg-gray-400 rounded-full"
+                    ></div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Draggable Scale (Unchanged Functionality) */}
         <div
-          ref={handleRef}
-          style={{
-            position: "absolute",
-            left: 0,
-            top: "50%",
-            transform: `translateX(${(speed / 5) * 100}%) translateY(-50%)`,
-            width: "10px",
-            height: "20px",
-            backgroundColor: "#2f87f0",
-            borderRadius: "5px",
-            cursor: "pointer",
-            transition: isDragging.current ? "none" : "transform 0.2s ease",
-          }}
-        />
+          ref={secondRulerRef}
+          className="relative w-full h-8 bg-gray-800 flex items-center mt-20"
+        >
+          <div
+            ref={handleRef}
+            className="absolute left-0 flex flex-col items-center cursor-pointer"
+          >
+            {/* Speed Display */}
+            <div
+              className="mb-2 px-2 py-1 bg-blue-500 text-white text-xs rounded-md"
+              style={{
+                background:
+                  "radial-gradient(75% 75% at 51.61% 52.78%, #022F62 0%, #001E41 100%)",
+              }}
+            >
+              {speed.toFixed(2)}
+            </div>
+            {/* Vertical Dragger */}
+            <div
+              className=" h-46 rounded-md"
+              style={{
+                border: "1.4px solid transparent",
+                borderImage:
+                  "linear-gradient(90deg, #192235 -9.98%, #004AD4 41.27%, #6FADFF 53.45%, #004AD4 66.64%, #192235 116.88%) 1",
+                borderImageSlice: 1,
+              }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

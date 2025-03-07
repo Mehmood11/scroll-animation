@@ -12,7 +12,7 @@ const GetStarted = () => {
         Holds no opinions on what's and how's. Build whatever makes sense to
         you.
       </p>
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center gap-4 flex-col sm:flex-row">
         <button className="rounded-xl shadow-[inset_0px_0px_8px_0px_#0099FF] text-white px-6 py-3 transition-colors">
           Try it now
         </button>

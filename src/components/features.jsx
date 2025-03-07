@@ -1,12 +1,16 @@
 import React from "react";
 import interfaceSvg from "../assets/interface.svg";
-import collab from "../assets/collab.svg";
 import fileCloud from "../assets/cloud-file.svg";
 import lock from "../assets/lock.svg";
 import privacyCloud from "../assets/privacy-cloud.svg";
 import uploadCloud from "../assets/upload-cloud.svg";
 import cloud from "../assets/cloud.svg";
 import integration from "../assets/integration.svg";
+import collab1 from "../assets/collab1.svg";
+import collab2 from "../assets/collab2.svg";
+import collab3 from "../assets/collab3.svg";
+import collab4 from "../assets/collab4.svg";
+import collab5 from "../assets/collab5.svg";
 
 const Features = () => {
   return (
@@ -18,7 +22,7 @@ const Features = () => {
         <h1 class="text-3xl font-bold text-center mb-4 mt-2">
           Features and Benefits
         </h1>
-        <p class="text-center w-150">
+        <p class="text-center md:w-150">
           Create, customize, and collaborate effortlessly with our intuitive
           platform. From simple edits to complex designs, bring your vision to
           life in no time.
@@ -53,9 +57,9 @@ const Features = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
@@ -95,18 +99,105 @@ const Features = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
             </div>
-            <img
+            <div className="flex items-end justify-center">
+              <div className="relative w-66 h-40 flex items-end justify-center z-1">
+                <button className="cursor-pointer rounded-3xl text-xs shadow-[inset_0px_0px_8px_0px_#0099FF] text-white px-6 py-3 transition-colors">
+                  Collaboration
+                </button>
+
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={collab1}
+                    alt="collab1"
+                  />
+                  <div
+                    className="absolute w-[2px] h-[60px] left-5 -rotate-2 mt-1"
+                    style={{
+                      border: "1.2px solid transparent",
+                      background:
+                        "radial-gradient(circle at 50% 40%, #7050FF 0%, rgba(14, 28, 50, 0.08) 100%)",
+                    }}
+                  ></div>
+                </div>
+
+                <div className="absolute top-[22%] left-7 transform -translate-x-1/2">
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={collab2}
+                    alt="collab2"
+                  />
+                  <div
+                    className="absolute w-[2px] h-[45px] -right-3 top-9 -rotate-40"
+                    style={{
+                      border: "1.2px solid transparent",
+                      background:
+                        "radial-gradient(circle at 50% 40%, #7050FF 0%, rgba(14, 28, 50, 0.08) 100%)",
+                    }}
+                  ></div>
+                </div>
+
+                <div className="absolute bottom-0 -left-3 transform -translate-x-1/2">
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={collab3}
+                    alt="collab3"
+                  />
+                  <div
+                    className="absolute w-[2px] h-[50px] -top-[5px] -right-8 rotate-90"
+                    style={{
+                      border: "1.2px solid transparent",
+                      background:
+                        "radial-gradient(circle at 50% 40%, #7050FF 0%, rgba(14, 28, 50, 0.08) 100%)",
+                    }}
+                  ></div>
+                </div>
+
+                <div className="absolute bottom-0 -right-3 transform translate-x-1/2">
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={collab4}
+                    alt="collab4"
+                  />
+                  <div
+                    className="absolute w-[2px] h-[50px] -top-[5px] -left-8 rotate-90"
+                    style={{
+                      border: "1.2px solid transparent",
+                      background:
+                        "radial-gradient(circle at 50% 40%, #7050FF 0%, rgba(14, 28, 50, 0.08) 100%)",
+                    }}
+                  ></div>
+                </div>
+
+                <div className="absolute top-[22%] right-7 transform translate-x-1/2">
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={collab5}
+                    alt="collab5"
+                  />
+                  <div
+                    className="absolute w-[2px] h-[45px] -left-3 top-9 rotate-40"
+                    style={{
+                      border: "1.2px solid transparent",
+                      background:
+                        "radial-gradient(circle at 50% 40%, #7050FF 0%, rgba(14, 28, 50, 0.08) 100%)",
+                    }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            {/* <img
               src={collab}
               alt="collab"
               className="absolute h-50 z-10 right-0 lg:right-5 w-[80%] md:w-[90%]"
-            />
+            /> */}
             <div className="collab-circle-1"></div>
             <div className="collab-circle-2"></div>
           </div>
@@ -158,7 +249,7 @@ const Features = () => {
               Secure Cloud Storage
             </h1>
             <p className="text-sm text-[#BEBEBE] w-[300px] mt-1 z-10 relative">
-              With cloud storage, users’ projects are automatically saved,
+              With cloud storage, users' projects are automatically saved,
               ensuring their data is never lost.
             </p>
             <div className="flex items-center mt-2 text-[#5EBCFF] cursor-pointer relative z-10">
@@ -172,9 +263,9 @@ const Features = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
@@ -214,9 +305,9 @@ const Features = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
